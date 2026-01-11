@@ -13,6 +13,9 @@ on:
       - main
       - master
 
+  # Manual trigger
+  workflow_dispatch:
+
 jobs:
   # Build and test job - runs on all triggers
   build:
@@ -60,7 +63,7 @@ jobs:
         run: npm ci
 
       - name: Build package
-        run: npm run build:lib
+        run: npm run build:lib && npm run build:mcp
 
       - name: Check if version changed
         id: version-check
