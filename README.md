@@ -9,14 +9,14 @@
 
 <p align="center">
   <strong>The Complete AI Coding Toolkit</strong><br/>
-  Beautiful animated React components with MCP server integration for AI assistants
+  Beautiful animated React components + AWS Architecture Designer with IaC generation
 </p>
 
 <p align="center">
-  <a href="#installation">Installation</a> •
-  <a href="#components">Components</a> •
+  <a href="#features">Features</a> •
+  <a href="#ui-components">UI Components</a> •
+  <a href="#architecture-designer">Architecture Designer</a> •
   <a href="#mcp-server">MCP Server</a> •
-  <a href="#vanilla-htmlcss">Vanilla HTML/CSS</a> •
   <a href="#cli">CLI</a>
 </p>
 
@@ -24,13 +24,23 @@
 
 ## Features
 
-- **18+ Production-Ready Components** - Loading states, e-commerce, chat, auth, and more
-- **MCP Server Integration** - Direct AI assistant access (Claude, Cursor, Windsurf)
-- **Dual Format Support** - React/Framer Motion + Vanilla HTML/CSS/JS
+| Feature | Count | Description |
+|---------|-------|-------------|
+| **UI Components** | 25 | Production-ready React components with Framer Motion |
+| **AWS Services** | 20 | Drag-and-drop cloud architecture designer |
+| **IaC Generators** | 3 | Terraform, Pulumi TypeScript, Pulumi Python |
+| **MCP Integration** | 3 | Claude, Cursor, Windsurf support |
+| **Output Formats** | 2 | React + Vanilla HTML/CSS/JS |
+
+### Key Capabilities
+
+- **25 Animated UI Components** - Loading states, e-commerce, chat, auth, visual effects
+- **AWS Architecture Designer** - Visual drag-and-drop cloud infrastructure design
+- **Infrastructure as Code** - Export to Terraform or Pulumi (TypeScript/Python)
+- **MCP Server** - Direct AI assistant integration (Claude, Cursor, Windsurf)
+- **Dual Format** - React/Framer Motion + Vanilla HTML/CSS/JS
 - **TypeScript First** - Full type definitions included
-- **Customizable** - Colors, sizes, animations, and themes
-- **Dark/Light Mode** - Built-in theme support
-- **Zero Config** - Works out of the box
+- **VPC Support** - Design complete network architectures with subnets
 
 ---
 
@@ -42,29 +52,21 @@ npm install archyra framer-motion lucide-react
 
 ---
 
-## Components
+## UI Components
 
-### Loading Components
+### 25 Production-Ready Components
+
+#### Loading (5 components)
 
 | Component | Description |
 |-----------|-------------|
 | `LoadingDots` | Animated bouncing dots |
-| `Skeleton` | Content placeholder with pulse/wave animation |
+| `Skeleton` | Content placeholder (text, avatar, card, image) |
 | `Shimmer` | Shimmer loading effect |
-| `ShimmerCard` | Pre-built card skeleton |
-| `ShimmerTable` | Table loading skeleton |
-
-### Processing Components
-
-| Component | Description |
-|-----------|-------------|
+| `ProgressBar` | Animated progress (default, gradient, striped, glow) |
 | `PulseCircle` | Circular progress with pulse rings |
-| `ProgressBar` | Animated progress bar (default, gradient, striped, glow) |
-| `CircularProgress` | Circular progress indicator |
-| `StepProgress` | Multi-step progress tracker |
-| `DataProcessing` | Data pipeline visualization |
 
-### Creative / AI Components
+#### Creative / AI (3 components)
 
 | Component | Description |
 |-----------|-------------|
@@ -72,23 +74,27 @@ npm install archyra framer-motion lucide-react
 | `AiCreating2` | AI brain with rotating rings |
 | `CodeTyping` | Terminal code typing effect |
 
-### Auth Components
+#### Processing (1 component)
 
 | Component | Description |
 |-----------|-------------|
-| `FloatingLogin` | Animated login form with OAuth support |
+| `DataProcessing` | Data pipeline visualization |
 
-### Chat Components
+#### Auth (1 component)
+
+| Component | Description |
+|-----------|-------------|
+| `FloatingLogin` | Animated login form with OAuth |
+
+#### Chat (3 components)
 
 | Component | Description |
 |-----------|-------------|
 | `ChatBubble` | Message bubble with status indicators |
 | `ChatTyping` | Typing indicator (dots, pulse, wave) |
 | `ChatMessage` | Full chat message with avatar |
-| `ChatConversation` | Chat container component |
-| `ChatInput` | Message input with send button |
 
-### E-Commerce Components
+#### E-Commerce (5 components)
 
 | Component | Description |
 |-----------|-------------|
@@ -98,9 +104,60 @@ npm install archyra framer-motion lucide-react
 | `FlashSaleTimer` | Countdown timer with urgency styling |
 | `CartNotification` | Flying product notification |
 
+#### Visual Effects (7 components)
+
+| Component | Description |
+|-----------|-------------|
+| `GlowButton` | Button with animated glow effect |
+| `SpotlightCard` | Card with mouse-following spotlight |
+| `AuroraBackground` | Animated aurora gradient background |
+| `AnimatedBeam` | Animated connecting beam between elements |
+| `Card3D` | 3D tilt card with glare effect |
+| `NeonGradientCard` | Card with rotating neon gradient border |
+| `InfiniteCarousel` | Infinite scrolling carousel |
+
+---
+
+## Architecture Designer
+
+### Visual AWS Infrastructure Design
+
+Design cloud architectures visually and export production-ready Infrastructure as Code.
+
+### 20 AWS Services Supported
+
+| Category | Services |
+|----------|----------|
+| **Compute** | EC2, Lambda, ECS |
+| **Storage** | S3 |
+| **Database** | RDS, DynamoDB, ElastiCache |
+| **Networking** | VPC, CloudFront, Route53, API Gateway, ALB, NLB, NAT Gateway |
+| **Security** | IAM, Cognito |
+| **Integration** | SNS, SQS |
+| **VPC Components** | VPC Environment, Public Subnet, Private Subnet |
+
+### Infrastructure as Code Export
+
+| Format | Languages | Output Files |
+|--------|-----------|--------------|
+| **Terraform** | HCL | `main.tf`, `variables.tf`, `outputs.tf`, modules |
+| **Pulumi** | TypeScript | `index.ts`, `Pulumi.yaml`, `package.json` |
+| **Pulumi** | Python | `__main__.py`, `Pulumi.yaml`, `requirements.txt` |
+
+### Architecture Features
+
+- **Drag & Drop** - Visual service placement
+- **Auto-connections** - Smart service linking
+- **VPC Designer** - Complete network architecture with subnets
+- **Property Editor** - Configure each service (instance types, runtimes, etc.)
+- **Real-time Preview** - See IaC code as you design
+- **ZIP Export** - Download complete project structure
+
 ---
 
 ## Quick Start
+
+### UI Components
 
 ```tsx
 import { LoadingDots, ChatBubble, ProductCard } from 'archyra';
@@ -108,17 +165,14 @@ import { LoadingDots, ChatBubble, ProductCard } from 'archyra';
 function App() {
   return (
     <div>
-      {/* Loading indicator */}
       <LoadingDots size="md" color="#6366f1" />
 
-      {/* Chat message */}
       <ChatBubble
         message="Hello!"
         variant="sender"
         color="blue"
       />
 
-      {/* Product card */}
       <ProductCard
         name="Premium Headphones"
         price={299}
@@ -130,23 +184,22 @@ function App() {
 }
 ```
 
+### Architecture Designer
+
+```tsx
+// The Architecture Designer is a full-page application
+// Access it at /designer in the gallery
+
+// Export options:
+// 1. Terraform HCL
+// 2. Pulumi TypeScript
+// 3. Pulumi Python
+// 4. ZIP download with all files
+```
+
 ---
 
 ## Component Examples
-
-### LoadingDots
-
-```tsx
-import { LoadingDots } from 'archyra';
-
-<LoadingDots size="md" color="#6366f1" speed="normal" />
-```
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the dots |
-| `color` | `string` | `'#6366f1'` | Color of the dots |
-| `speed` | `'slow' \| 'normal' \| 'fast'` | `'normal'` | Animation speed |
 
 ### AiCreating2
 
@@ -163,16 +216,6 @@ import { AiCreating2 } from 'archyra';
 />
 ```
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `isLoading` | `boolean` | required | Controls visibility |
-| `message` | `string` | `'AI is creating...'` | Main message |
-| `subMessage` | `string` | - | Secondary text |
-| `primaryColor` | `string` | `'#6366f1'` | Accent color |
-| `backgroundColor` | `string` | `'#0f172a'` | Background color |
-| `contained` | `boolean` | `false` | Container vs overlay mode |
-| `onComplete` | `() => void` | - | Completion callback |
-
 ### ChatBubble
 
 ```tsx
@@ -184,18 +227,8 @@ import { ChatBubble } from 'archyra';
   color="blue"
   timestamp="2:30 PM"
   status="delivered"
-  animated={true}
 />
 ```
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `message` | `string` | required | Message content |
-| `variant` | `'sender' \| 'receiver'` | `'sender'` | Message direction |
-| `color` | `'blue' \| 'green' \| 'purple' \| 'gray' \| 'gradient'` | `'blue'` | Bubble color |
-| `timestamp` | `string` | - | Time display |
-| `status` | `'sending' \| 'sent' \| 'delivered' \| 'read'` | - | Message status |
-| `animated` | `boolean` | `true` | Enable animations |
 
 ### ProductCard
 
@@ -211,7 +244,6 @@ import { ProductCard } from 'archyra';
   reviews={128}
   badge="Sale"
   onAddToCart={() => handleAdd()}
-  onWishlist={() => handleWishlist()}
 />
 ```
 
@@ -225,7 +257,6 @@ import { FlashSaleTimer } from 'archyra';
   title="Flash Sale Ends In"
   discount={50}
   variant="urgent"
-  showBadge={true}
   onEnd={() => console.log('Sale ended!')}
 />
 ```
@@ -234,12 +265,12 @@ import { FlashSaleTimer } from 'archyra';
 
 ## MCP Server
 
-Archyra includes an MCP (Model Context Protocol) server that enables AI assistants to help users add components to their projects.
+Archyra includes an MCP (Model Context Protocol) server for AI assistant integration.
 
 ### Quick Setup
 
 ```bash
-# Interactive mode - select your AI tool
+# Interactive mode
 npx archyra init
 
 # Or specify directly
@@ -258,19 +289,6 @@ npx archyra init --client windsurf
 
 ### Manual Configuration
 
-**Claude Desktop** (`claude_desktop_config.json`):
-```json
-{
-  "mcpServers": {
-    "archyra": {
-      "command": "npx",
-      "args": ["-y", "archyra@latest", "serve"]
-    }
-  }
-}
-```
-
-**Cursor** (`.cursor/mcp.json`):
 ```json
 {
   "mcpServers": {
@@ -286,14 +304,12 @@ npx archyra init --client windsurf
 
 | Tool | Description |
 |------|-------------|
-| `list_components` | List all available components with filtering |
-| `get_component` | Get component details, props, and source code |
-| `add_component` | Get instructions to add a component to your project |
-| `get_install_command` | Get npm install command for dependencies |
+| `list_components` | List all 25 components with filtering |
+| `get_component` | Get component details, props, and source |
+| `add_component` | Get instructions to add a component |
+| `get_install_command` | Get npm install command |
 
 ### Usage Examples
-
-Once configured, ask your AI assistant:
 
 - *"List all animation components"*
 - *"Add the LoadingDots component to my project"*
@@ -304,15 +320,11 @@ Once configured, ask your AI assistant:
 
 ## Vanilla HTML/CSS
 
-Every component has a vanilla HTML/CSS/JS version - no React or npm required!
-
-### Get Vanilla Version via MCP
+Every UI component has a vanilla HTML/CSS/JS version - no React or npm required!
 
 ```
 "Show me the LoadingDots component in vanilla format"
 ```
-
-### Example Output
 
 **HTML:**
 ```html
@@ -358,18 +370,16 @@ npx archyra serve               # Start MCP server manually
 
 ---
 
-## TypeScript
+## Summary
 
-Full TypeScript support with exported types:
-
-```tsx
-import type {
-  LoadingDotsProps,
-  ChatBubbleProps,
-  ProductCardProps,
-  AiCreating2Props
-} from 'archyra';
-```
+| Category | Details |
+|----------|---------|
+| **UI Components** | 25 animated React components |
+| **Component Categories** | Loading, Creative/AI, Chat, E-Commerce, Auth, Visual Effects |
+| **AWS Services** | 20 services across Compute, Storage, Database, Networking, Security, Integration |
+| **IaC Output** | Terraform HCL, Pulumi TypeScript, Pulumi Python |
+| **MCP Support** | Claude Code, Cursor, Windsurf |
+| **Output Formats** | React/Framer Motion, Vanilla HTML/CSS/JS |
 
 ---
 
