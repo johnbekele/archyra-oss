@@ -1,19 +1,38 @@
-# Archyra
+<p align="center">
+  <img src="https://img.shields.io/npm/v/archyra?style=for-the-badge&color=6366f1" alt="npm version" />
+  <img src="https://img.shields.io/npm/dm/archyra?style=for-the-badge&color=22c55e" alt="downloads" />
+  <img src="https://img.shields.io/badge/license-MIT-blue?style=for-the-badge" alt="license" />
+  <img src="https://img.shields.io/badge/TypeScript-Ready-3178c6?style=for-the-badge&logo=typescript&logoColor=white" alt="typescript" />
+</p>
 
-Beautiful animated components for React/Next.js. Production-ready components for AI interfaces with MCP (Model Context Protocol) server support.
+<h1 align="center">Archyra</h1>
 
-[![npm version](https://badge.fury.io/js/archyra.svg)](https://www.npmjs.com/package/archyra)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <strong>The Complete AI Coding Toolkit</strong><br/>
+  Beautiful animated React components with MCP server integration for AI assistants
+</p>
+
+<p align="center">
+  <a href="#installation">Installation</a> •
+  <a href="#components">Components</a> •
+  <a href="#mcp-server">MCP Server</a> •
+  <a href="#vanilla-htmlcss">Vanilla HTML/CSS</a> •
+  <a href="#cli">CLI</a>
+</p>
+
+---
 
 ## Features
 
-- 7 production-ready animation components
-- TypeScript support
-- Framer Motion animations
-- MCP Server for AI assistants (Claude, etc.)
-- Customizable colors and sizes
-- Dark/Light mode support
-- Responsive design
+- **18+ Production-Ready Components** - Loading states, e-commerce, chat, auth, and more
+- **MCP Server Integration** - Direct AI assistant access (Claude, Cursor, Windsurf)
+- **Dual Format Support** - React/Framer Motion + Vanilla HTML/CSS/JS
+- **TypeScript First** - Full type definitions included
+- **Customizable** - Colors, sizes, animations, and themes
+- **Dark/Light Mode** - Built-in theme support
+- **Zero Config** - Works out of the box
+
+---
 
 ## Installation
 
@@ -21,27 +40,97 @@ Beautiful animated components for React/Next.js. Production-ready components for
 npm install archyra framer-motion lucide-react
 ```
 
-## Available Components
+---
 
-| Component | Category | Description |
-|-----------|----------|-------------|
-| `LoadingDots` | Loading | Simple bouncing dots animation |
-| `PulseCircle` | Processing | Circular progress with pulse rings |
-| `CodeTyping` | Creative | Code typing effect with syntax colors |
-| `DataProcessing` | Processing | Data pipeline visualization |
-| `AiCreating` | Creative | Multi-stage AI robot animation |
-| `AiCreating2` | Creative | AI brain with rotating rings |
-| `FloatingLogin` | Auth | Floating login form with OAuth |
+## Components
+
+### Loading Components
+
+| Component | Description |
+|-----------|-------------|
+| `LoadingDots` | Animated bouncing dots |
+| `Skeleton` | Content placeholder with pulse/wave animation |
+| `Shimmer` | Shimmer loading effect |
+| `ShimmerCard` | Pre-built card skeleton |
+| `ShimmerTable` | Table loading skeleton |
+
+### Processing Components
+
+| Component | Description |
+|-----------|-------------|
+| `PulseCircle` | Circular progress with pulse rings |
+| `ProgressBar` | Animated progress bar (default, gradient, striped, glow) |
+| `CircularProgress` | Circular progress indicator |
+| `StepProgress` | Multi-step progress tracker |
+| `DataProcessing` | Data pipeline visualization |
+
+### Creative / AI Components
+
+| Component | Description |
+|-----------|-------------|
+| `AiCreating` | Multi-stage AI robot animation |
+| `AiCreating2` | AI brain with rotating rings |
+| `CodeTyping` | Terminal code typing effect |
+
+### Auth Components
+
+| Component | Description |
+|-----------|-------------|
+| `FloatingLogin` | Animated login form with OAuth support |
+
+### Chat Components
+
+| Component | Description |
+|-----------|-------------|
+| `ChatBubble` | Message bubble with status indicators |
+| `ChatTyping` | Typing indicator (dots, pulse, wave) |
+| `ChatMessage` | Full chat message with avatar |
+| `ChatConversation` | Chat container component |
+| `ChatInput` | Message input with send button |
+
+### E-Commerce Components
+
+| Component | Description |
+|-----------|-------------|
+| `ProductCard` | 3D product card with hover effects |
+| `AddToCartButton` | Animated cart button with price |
+| `WishlistHeart` | Heart with particle burst animation |
+| `FlashSaleTimer` | Countdown timer with urgency styling |
+| `CartNotification` | Flying product notification |
+
+---
 
 ## Quick Start
 
 ```tsx
-import { LoadingDots } from 'archyra';
+import { LoadingDots, ChatBubble, ProductCard } from 'archyra';
 
-function MyComponent() {
-  return <LoadingDots size="md" color="#6366F1" />;
+function App() {
+  return (
+    <div>
+      {/* Loading indicator */}
+      <LoadingDots size="md" color="#6366f1" />
+
+      {/* Chat message */}
+      <ChatBubble
+        message="Hello!"
+        variant="sender"
+        color="blue"
+      />
+
+      {/* Product card */}
+      <ProductCard
+        name="Premium Headphones"
+        price={299}
+        rating={4.8}
+        onAddToCart={() => console.log('Added!')}
+      />
+    </div>
+  );
 }
 ```
+
+---
 
 ## Component Examples
 
@@ -50,34 +139,14 @@ function MyComponent() {
 ```tsx
 import { LoadingDots } from 'archyra';
 
-<LoadingDots size="md" color="#6366F1" />
+<LoadingDots size="md" color="#6366f1" speed="normal" />
 ```
 
-**Props:**
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `size` | `'sm' \| 'md' \| 'lg'` | `'md'` | Size of the dots |
-| `color` | `string` | `'#6366F1'` | Color of the dots |
-
-### PulseCircle
-
-```tsx
-import { PulseCircle } from 'archyra';
-
-const [isActive, setIsActive] = useState(false);
-
-<PulseCircle
-  isActive={isActive}
-  onComplete={() => setIsActive(false)}
-/>
-```
-
-**Props:**
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `isActive` | `boolean` | required | Activates the animation |
-| `progress` | `number` | - | External progress (0-100) |
-| `onComplete` | `() => void` | - | Callback at 100% |
+| `color` | `string` | `'#6366f1'` | Color of the dots |
+| `speed` | `'slow' \| 'normal' \| 'fast'` | `'normal'` | Animation speed |
 
 ### AiCreating2
 
@@ -85,65 +154,92 @@ const [isActive, setIsActive] = useState(false);
 import { AiCreating2 } from 'archyra';
 
 <AiCreating2
-  isLoading={isLoading}
-  message="Creating your plan..."
-  primaryColor="#6366F1"
+  isLoading={true}
+  message="Creating your design..."
+  primaryColor="#6366f1"
   backgroundColor="#0f172a"
   contained={true}
-  onComplete={() => setIsLoading(false)}
+  onComplete={() => console.log('Done!')}
 />
 ```
 
-**Props:**
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `isLoading` | `boolean` | required | Controls visibility |
 | `message` | `string` | `'AI is creating...'` | Main message |
 | `subMessage` | `string` | - | Secondary text |
-| `primaryColor` | `string` | `'#6366F1'` | Accent color |
+| `primaryColor` | `string` | `'#6366f1'` | Accent color |
 | `backgroundColor` | `string` | `'#0f172a'` | Background color |
-| `textColor` | `string` | `'#ffffff'` | Text color |
-| `contained` | `boolean` | `false` | Render in container vs overlay |
+| `contained` | `boolean` | `false` | Container vs overlay mode |
 | `onComplete` | `() => void` | - | Completion callback |
 
-### FloatingLogin
+### ChatBubble
 
 ```tsx
-import { FloatingLogin } from 'archyra';
+import { ChatBubble } from 'archyra';
 
-<FloatingLogin
-  mode="dark"
-  primaryColor="#6366F1"
-  floatIntensity={5}
-  onLogin={(data) => console.log(data)}
-  onGoogleLogin={() => signInWithGoogle()}
-  onAppleLogin={() => signInWithApple()}
+<ChatBubble
+  message="Hey, how are you?"
+  variant="sender"
+  color="blue"
+  timestamp="2:30 PM"
+  status="delivered"
+  animated={true}
 />
 ```
 
-**Props:**
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
-| `mode` | `'light' \| 'dark'` | `'light'` | Theme mode |
-| `primaryColor` | `string` | `'#6366F1'` | Accent color |
-| `floatingEnabled` | `boolean` | `true` | Enable floating animation |
-| `floatIntensity` | `number` | `5` | Float intensity (1-10) |
-| `onLogin` | `(data) => void` | - | Login callback |
-| `onGoogleLogin` | `() => void` | - | Google OAuth callback |
-| `onAppleLogin` | `() => void` | - | Apple Sign-In callback |
+| `message` | `string` | required | Message content |
+| `variant` | `'sender' \| 'receiver'` | `'sender'` | Message direction |
+| `color` | `'blue' \| 'green' \| 'purple' \| 'gray' \| 'gradient'` | `'blue'` | Bubble color |
+| `timestamp` | `string` | - | Time display |
+| `status` | `'sending' \| 'sent' \| 'delivered' \| 'read'` | - | Message status |
+| `animated` | `boolean` | `true` | Enable animations |
+
+### ProductCard
+
+```tsx
+import { ProductCard } from 'archyra';
+
+<ProductCard
+  image="/product.jpg"
+  name="Wireless Earbuds"
+  price={149}
+  originalPrice={199}
+  rating={4.5}
+  reviews={128}
+  badge="Sale"
+  onAddToCart={() => handleAdd()}
+  onWishlist={() => handleWishlist()}
+/>
+```
+
+### FlashSaleTimer
+
+```tsx
+import { FlashSaleTimer } from 'archyra';
+
+<FlashSaleTimer
+  endTime={new Date('2024-12-31')}
+  title="Flash Sale Ends In"
+  discount={50}
+  variant="urgent"
+  showBadge={true}
+  onEnd={() => console.log('Sale ended!')}
+/>
+```
 
 ---
 
-## MCP Server (For AI Assistants)
+## MCP Server
 
-This package includes an MCP (Model Context Protocol) server that allows AI assistants like Claude, Cursor, and Windsurf to help users add animation components to their projects.
+Archyra includes an MCP (Model Context Protocol) server that enables AI assistants to help users add components to their projects.
 
 ### Quick Setup
 
-Run one command to configure MCP for your AI coding tool:
-
 ```bash
-# Interactive mode - select your tool
+# Interactive mode - select your AI tool
 npx archyra init
 
 # Or specify directly
@@ -152,40 +248,127 @@ npx archyra init --client cursor
 npx archyra init --client windsurf
 ```
 
-Then restart your AI tool to load the MCP server.
-
 ### Supported AI Tools
 
 | Tool | Config Location |
 |------|-----------------|
-| Claude Code | `~/.claude/claude_desktop_config.json` or `~/.mcp.json` |
-| Cursor | `.cursor/mcp.json` or `~/.cursor/mcp.json` |
-| Windsurf | `~/.codeium/windsurf/mcp_config.json` |
+| **Claude Code** | `~/.claude/claude_desktop_config.json` or `~/.mcp.json` |
+| **Cursor** | `.cursor/mcp.json` or `~/.cursor/mcp.json` |
+| **Windsurf** | `~/.codeium/windsurf/mcp_config.json` |
 
-### Available MCP Tools
+### Manual Configuration
+
+**Claude Desktop** (`claude_desktop_config.json`):
+```json
+{
+  "mcpServers": {
+    "archyra": {
+      "command": "npx",
+      "args": ["-y", "archyra@latest", "serve"]
+    }
+  }
+}
+```
+
+**Cursor** (`.cursor/mcp.json`):
+```json
+{
+  "mcpServers": {
+    "archyra": {
+      "command": "npx",
+      "args": ["-y", "archyra@latest", "serve"]
+    }
+  }
+}
+```
+
+### MCP Tools
 
 | Tool | Description |
 |------|-------------|
-| `list_components` | List all available components |
-| `get_component` | Get component details and source code |
-| `add_component` | Get instructions to add a component |
-| `get_install_command` | Get npm install command |
+| `list_components` | List all available components with filtering |
+| `get_component` | Get component details, props, and source code |
+| `add_component` | Get instructions to add a component to your project |
+| `get_install_command` | Get npm install command for dependencies |
 
-### Usage with AI Assistants
+### Usage Examples
 
-Once configured, you can ask:
-- "List all animation components"
-- "Add the LoadingDots component to my project"
-- "Show me the PulseCircle component details"
-- "What dependencies do I need for FloatingLogin?"
+Once configured, ask your AI assistant:
 
-### CLI Commands
+- *"List all animation components"*
+- *"Add the LoadingDots component to my project"*
+- *"Show me the AiCreating2 component in vanilla HTML"*
+- *"What props does FlashSaleTimer accept?"*
+
+---
+
+## Vanilla HTML/CSS
+
+Every component has a vanilla HTML/CSS/JS version - no React or npm required!
+
+### Get Vanilla Version via MCP
+
+```
+"Show me the LoadingDots component in vanilla format"
+```
+
+### Example Output
+
+**HTML:**
+```html
+<div class="loading-dots">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+```
+
+**CSS:**
+```css
+.loading-dots {
+  display: flex;
+  gap: 8px;
+}
+.loading-dots span {
+  width: 12px;
+  height: 12px;
+  background: #6366f1;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out;
+}
+.loading-dots span:nth-child(1) { animation-delay: -0.32s; }
+.loading-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}
+```
+
+---
+
+## CLI
 
 ```bash
-npx archyra --help          # Show help
-npx archyra init            # Interactive setup
-npx archyra init --client X # Direct setup for client
-npx archyra serve           # Start MCP server manually
+npx archyra --help              # Show help
+npx archyra init                # Interactive MCP setup
+npx archyra init --client X     # Direct setup for specific client
+npx archyra serve               # Start MCP server manually
+```
+
+---
+
+## TypeScript
+
+Full TypeScript support with exported types:
+
+```tsx
+import type {
+  LoadingDotsProps,
+  ChatBubbleProps,
+  ProductCardProps,
+  AiCreating2Props
+} from 'archyra';
 ```
 
 ---
@@ -194,11 +377,13 @@ npx archyra serve           # Start MCP server manually
 
 MIT
 
+---
+
 ## Author
 
-johnbekele
+**johnbekele**
 
 ## Links
 
-- [npm package](https://www.npmjs.com/package/archyra)
-- [GitHub repository](https://github.com/johnbekele/archyra)
+- [npm Package](https://www.npmjs.com/package/archyra)
+- [GitHub Repository](https://github.com/johnbekele/Archyra)
