@@ -335,8 +335,7 @@ export default function LandingPage() {
                 </svg>
               </div>
               <span className="font-bold">
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 bg-clip-text text-transparent">Vibe</span>
-                <span>Kit</span>
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 bg-clip-text text-transparent">Archyra</span>
               </span>
             </div>
             <div className="flex items-center gap-6 text-sm text-muted-foreground">

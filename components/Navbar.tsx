@@ -105,9 +105,8 @@ export default function Navbar() {
             <div className="hidden sm:block">
               <span className="font-bold text-xl tracking-tight">
                 <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-violet-500 bg-clip-text text-transparent">
-                  Vibe
+                  Archyra
                 </span>
-                <span className="text-foreground">Kit</span>
               </span>
             </div>
           </Link>
