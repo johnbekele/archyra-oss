@@ -217,7 +217,7 @@ export default function Navbar() {
           {/* Right Side Actions */}
           <div className="flex items-center gap-2">
             <a
-              href="https://github.com/johnbekele/archyra"
+              href="https://github.com/johnbekele/archyra-oss"
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:flex"
@@ -299,7 +299,7 @@ export default function Navbar() {
               </div>
 
               <a
-                href="https://github.com/johnbekele/archyra"
+                href="https://github.com/johnbekele/archyra-oss"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}

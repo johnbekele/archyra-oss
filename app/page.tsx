@@ -309,7 +309,7 @@ export default function LandingPage() {
               </Button>
             </Link>
             <a
-              href="https://github.com/johnbekele/archyra"
+              href="https://github.com/johnbekele/archyra-oss"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -346,7 +346,7 @@ export default function LandingPage() {
                 Components
               </Link>
               <a
-                href="https://github.com/johnbekele/archyra"
+                href="https://github.com/johnbekele/archyra-oss"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-foreground transition-colors"

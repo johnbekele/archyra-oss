@@ -2144,7 +2144,7 @@ class FloatingLogin {
   onAddToCart={() => handleAddToCart()}
 />`,
     source: `// ProductCard component - see full source at:
-// https://github.com/johnbekele/archyra/blob/main/ProductCard.tsx
+// https://github.com/johnbekele/archyra-oss/blob/main/ProductCard.tsx
 // Install: npm install archyra framer-motion lucide-react`,
     vanilla: {
       html: `<div class="product-card">
@@ -2477,7 +2477,7 @@ class ProductCard {
   }}
 />`,
     source: `// AddToCartButton component - see full source at:
-// https://github.com/johnbekele/archyra/blob/main/AddToCartButton.tsx
+// https://github.com/johnbekele/archyra-oss/blob/main/AddToCartButton.tsx
 // Install: npm install archyra framer-motion lucide-react`,
     vanilla: {
       html: `<button class="add-to-cart-button violet">
@@ -2741,7 +2741,7 @@ class AddToCartButton {
   onToggle={(active) => toggleWishlist(active)}
 />`,
     source: `// WishlistHeart component - see full source at:
-// https://github.com/johnbekele/archyra/blob/main/WishlistHeart.tsx
+// https://github.com/johnbekele/archyra-oss/blob/main/WishlistHeart.tsx
 // Install: npm install archyra framer-motion lucide-react`,
     vanilla: {
       html: `<button class="wishlist-heart md">
@@ -2959,7 +2959,7 @@ class WishlistHeart {
   onEnd={() => console.log('Sale ended!')}
 />`,
     source: `// FlashSaleTimer component - see full source at:
-// https://github.com/johnbekele/archyra/blob/main/FlashSaleTimer.tsx
+// https://github.com/johnbekele/archyra-oss/blob/main/FlashSaleTimer.tsx
 // Install: npm install archyra framer-motion lucide-react`,
     vanilla: {
       html: `<div class="flash-sale-timer">
@@ -3250,7 +3250,7 @@ const [showNotification, setShowNotification] = useState(false);
   onViewCart={() => router.push('/cart')}
 />`,
     source: `// CartNotification component - see full source at:
-// https://github.com/johnbekele/archyra/blob/main/CartNotification.tsx
+// https://github.com/johnbekele/archyra-oss/blob/main/CartNotification.tsx
 // Install: npm install archyra framer-motion lucide-react`,
     vanilla: {
       html: `<div class="cart-notification top-right">

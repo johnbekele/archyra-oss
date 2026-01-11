@@ -396,4 +396,4 @@ MIT
 ## Links
 
 - [npm Package](https://www.npmjs.com/package/archyra)
-- [GitHub Repository](https://github.com/johnbekele/Archyra)
+- [GitHub Repository](https://github.com/johnbekele/archyra-oss)
